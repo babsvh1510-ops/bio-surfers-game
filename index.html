@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BIO‑SURFERS – Thema 13: Transport & Afweer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Start/Level select -->
+  <div id="startScreen" class="overlay visible">
+    <div class="panel">
+      <h1>BIO‑SURFERS</h1>
+      <h2>Thema 13 – Transport & Afweer</h2>
+      <p class="muted">Kies een level of druk op START voor 13.1. (←/→ = banen, Spatie = springen, P = pauze)</p>
+      <div class="levels">
+        <button data-level="1">13.1 Bloed</button>
+        <button data-level="2">13.2 Bloedsomloop & Bloedvaten</button>
+        <button data-level="3">13.3 Hart & Hartslag</button>
+        <button data-level="4">13.4 Hart‑ en Vaatziekten</button>
+        <button data-level="5">13.5 Weefselvloeistof & Lymfe</button>
+        <button data-level="6">13.6 Afweer, Immuniteit & Allergieën</button>
+      </div>
+      <div class="row">
+        <button id="startDefault">START (13.1)</button>
+        <button id="toggleVisual">Weergave: Auto</button>
+      </div>
+      <details>
+        <summary>Hoe speel je?</summary>
+        <ul>
+          <li>Wissel van baan met <b>←</b> en <b>→</b>.</li>
+          <li>Spring met <b>Spatie</b>.</li>
+          <li>Vang level‑items, ontwijk obstakels, beantwoord quizvragen.</li>
+          <li>Voltooi het level: haal voldoende <b>items</b> én <b>quiz</b>.</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+
+  <!-- HUD -->
+  <div id="hud">
+    <div class="left">
+      <span id="levelName">Level: –</span>
+      <span id="objective">Doel: –</span>
+    </div>
+    <div class="center">
+      <span id="score">Score: 0</span>
+    </div>
+    <div class="right">
+      <span id="lives" class="lives">❤️❤️❤️</span>
+      <span id="pauseHint" class="muted">P = pauze</span>
+    </div>
+  </div>
+
+  <!-- Game Area -->
+  <div id="gameArea">
+    <div id="road">
+      <div class="lane l0"></div>
+      <div class="lane l1"></div>
+      <div class="lane l2"></div>
+    </div>
+    <div id="player"></div>
+  </div>
+
+  <!-- Fact Card -->
+  <div id="factCard" class="overlay">
+    <div class="panel">
+      <h3>Wist je dat…</h3>
+      <p id="factText"></p>
+      <button id="factOk">Verder</button>
+    </div>
+  </div>
+
+  <!-- Quiz Card -->
+  <div id="quizCard" class="overlay">
+    <div class="panel">
+      <h3>Quizvraag</h3>
+      <p id="quizQuestion"></p>
+      <div id="quizOptions" class="options"></div>
+      <p id="quizFeedback" class="muted"></p>
+      <button id="quizNext" disabled>Verder</button>
+    </div>
+  </div>
+
+  <!-- Level Complete -->
+  <div id="levelComplete" class="overlay">
+    <div class="panel">
+      <h2>Level voltooid! 🎉</h2>
+      <p id="levelSummary"></p>
+      <div class="row">
+        <button id="nextLevel">Volgend level</button>
+        <button id="backMenu">Terug naar menu</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over -->
+  <div id="gameOver" class="overlay">
+    <div class="panel">
+      <h2>Game Over 💥</h2>
+      <p id="gameOverText"></p>
+      <div class="row">
+        <button id="retryLevel">Opnieuw</button>
+        <button id="goMenu">Naar menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>

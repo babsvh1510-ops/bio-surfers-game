@@ -1,0 +1,57 @@
+
+:root{
+  --bg:#0b0f19; --panel:#141a2a; --panel2:#101624; --accent:#ffd200; --text:#fff;
+  --muted:#b6c0d4; --lane:#1e2438; --laneLine:#2a3352;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;height:100%}
+button{background:var(--accent);color:#111;border:none;border-radius:10px;padding:10px 16px;font-weight:700;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+button:disabled{opacity:.6;cursor:not-allowed}
+button.secondary{background:#3ec1ff;color:#00121d}
+button.danger{background:#ff4d4d;color:#fff}
+.overlay{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:linear-gradient(160deg, rgba(0,0,0,.65), rgba(0,0,0,.8));z-index:50;padding:24px}
+.overlay.visible{display:flex}
+.panel{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid #223;border-radius:16px;padding:24px;max-width:900px;width:min(92vw,900px);box-shadow:0 16px 60px rgba(0,0,0,.5)}
+.panel h1,h2,h3{margin-top:0}
+.panel .row{display:flex;gap:12px;flex-wrap:wrap}
+.levels{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 16px}
+.muted{color:var(--muted)}
+#hud{position:fixed;top:10px;left:0;right:0;z-index:40;display:flex;justify-content:space-between;align-items:center;padding:0 14px;font-weight:700;letter-spacing:.2px}
+#hud .left,#hud .center,#hud .right{display:flex;gap:16px;align-items:center}
+.lives{font-size:20px}
+#gameArea{position:fixed;inset:0;overflow:hidden;background: radial-gradient(1000px 500px at 50% 120%, #081024 10%, #060b18 60%, #040910 100%)}
+#road{position:absolute;left:50%;transform:translateX(-50%);bottom:0;height:100%;width:min(78vw,900px);perspective:1200px}
+.lane{position:absolute;bottom:0;top:0;width:32%;transform-origin:bottom center;background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.0));border-left:2px solid var(--laneLine);border-right:2px solid var(--laneLine);box-shadow: inset 0 0 120px rgba(0,0,0,.45)}
+.l0{left:2%}.l1{left:34%}.l2{left:66%}
+#player{position:absolute;bottom:12%;left:50%;transform:translateX(-50%);width:74px;height:74px;border-radius:14px;background:linear-gradient(145deg,#ffe66a,#ffb300);box-shadow:0 10px 30px rgba(0,0,0,.45), inset 0 -6px 10px rgba(0,0,0,.25);border:2px solid rgba(0,0,0,.25)}
+.entity{position:absolute;width:74px;height:74px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.5);border:2px solid rgba(0,0,0,.25)}
+.entity.item{background:#7bf372}
+.entity.obstacle{background:#ff5b5b;color:#fff}
+.entity .icon{font-size:30px}
+.tag{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.55);color:#fff;padding:2px 6px;border-radius:6px;font-size:11px}
+#quizCard .options{display:flex;flex-direction:column;gap:8px;margin:10px 0}
+#quizFeedback{min-height:22px}
+/* Level color accents */
+.level-1 .entity.item{background:#ff7676}
+.level-1 .entity.item.wbc{background:#ffffff;color:#111;border-color:#e6e6e6}
+.level-1 .entity.item.plt{background:#ffb84d}
+.level-1 .entity.item.plasma{background:#89d4ff}
+.level-1 .entity.obstacle.pathogen{background:#9d4dff}
+.level-2 .entity.item.artery{background:#ff4d4d}
+.level-2 .entity.item.vein{background:#4db3ff}
+.level-2 .entity.item.cap{background:#ffd24d}
+.level-2 .entity.obstacle.clot{background:#b30000}
+.level-3 .entity.item.heartpart{background:#ff6aa6}
+.level-3 .entity.obstacle.valve{background:#d34141}
+.level-4 .entity.item.healthy{background:#55e69b}
+.level-4 .entity.obstacle.plaque{background:#d4a84f}
+.level-4 .entity.obstacle.smoke{background:#666}
+.level-5 .entity.item.tf{background:#7be6ff}
+.level-5 .entity.item.lymph{background:#99ffcc}
+.level-5 .entity.item.node{background:#34d399}
+.level-5 .entity.obstacle.edema{background:#3aa3ff}
+.level-6 .entity.item.antibody{background:#b3a6ff}
+.level-6 .entity.item.vaccine{background:#ffd966}
+.level-6 .entity.item.memory{background:#9cff66}
+.level-6 .entity.item.antihist{background:#66e0ff}
+.level-6 .entity.obstacle.allergen{background:#cc99ff}
